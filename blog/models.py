@@ -19,3 +19,11 @@ class Post(models.Model):
     Published_date = models.DateTimeField(null=True)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created_date']
+
+    def __str__(self):
+        return self.title
+    def snippets(self):
+        return self.content[:100]+'...'

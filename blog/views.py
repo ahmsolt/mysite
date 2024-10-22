@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from blog.models import Post
 
 def blog_view(request):
     return render (request,'blog/blog-home.html')
