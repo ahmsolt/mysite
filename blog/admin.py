@@ -6,5 +6,6 @@ from blog.models import Post,Category
 class PostAdmin(admin.modelAdmin):
     list_display = ('title','author','status')
     list_filter = ('status',)
+    search_fields = ['title','contend']
 admin.site.register(Post,PostAdmin)
 admin.site.register(Category)
