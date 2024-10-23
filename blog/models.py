@@ -8,7 +8,7 @@ class Category(models.Model):
         return self.name
     
 class Post(models.Model):
-    #image = models.ImageField(upload_to='blog/',default='blog/default.jpg')
+    image = models.ImageField(upload_to='blog/',default='blog/default.jpg')
     author = models.ForeignKey(User,on_delete=models.SET_NULL,null=True)
     title = models.CharField(max_length=500)
     content = models.TextField()
