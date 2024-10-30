@@ -13,8 +13,7 @@
     <h1> Testing Page</h1>
     <p>test: {% posts as totalposts %}</p>
     {% for post in totalposts %}
-        <p>{{post}}</p>
-
+        <p>{{post.content|snippet:50}}</p>
     {% endfor %}
 
     
