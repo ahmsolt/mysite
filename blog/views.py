@@ -15,6 +15,4 @@ def blog_single(request,pid):
 
 
 def test(request):
-    posts = Post.objects.all()
-    context = {'posts':posts}
-    return render(request,'test.html',context)
+    return render(request,'test.html')
