@@ -27,4 +27,11 @@ def newsletter_view(request):
         if form.is_valid():
             form.save() 
             
+def test_view(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        c=Contact()
+        c.name=name    
+        c.save()
+    return render(request,'test.html',{})
             

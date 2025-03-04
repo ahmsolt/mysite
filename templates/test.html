@@ -7,18 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body> 
     
-   
-    <h1> Testing Page</h1>
-    <p>test: {% posts as totalposts %}</p>
-    {% for post in totalposts %}
-        <p>{{post.content|snippet:50}}</p>
-    {% endfor %}
-
-
-    {% popularposts %}
-
-    
+    <form action="{% url 'website:test' %}" method="post">
+        {% csrf_token %}
+        <label>name:</label>
+        <input name="name" type="'text">
+        <button type='submit'>submit</button>
+    </form>
+  
 </body>
 </html>
