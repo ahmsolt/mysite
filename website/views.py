@@ -29,9 +29,12 @@ def newsletter_view(request):
             
 def test_view(request):
     if request.method == 'POST':
-        name = request.POST.get('name')
-        c=Contact()
-        c.name=name    
-        c.save()
-    return render(request,'test.html',{})
+       form = ContactForm(request.POST)
+       if form.is_valid():
+           form.save()
+           return HttpResponse('done')
+       else:
+           return HttpResponse('not valid')
+    form = ContactForm()
+    return render(request,'test.html',{'form':form})
             
