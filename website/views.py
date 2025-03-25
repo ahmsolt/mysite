@@ -14,9 +14,9 @@ def contact_view(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.add_message(request,messages.SUCCESS,'yedone ')
+            messages.add_message(request,messages.SUCCESS,'Done. ')
         else:
-            messages.add_message(request,messages.ERROR,'ye!!!!!!done ')
+            messages.add_message(request,messages.ERROR,'There is a Porblem ! ')
 
     form = ContactForm()
     return render(request,'website/contact.html',{'form':form})
