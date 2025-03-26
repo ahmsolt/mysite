@@ -41,4 +41,10 @@ class Comment(models.Model):
     message = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
-    apporoach = models.BooleanField(default=False)
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['-created_date']
+    
+    def __str__(self):
+        return self.name
